@@ -16,6 +16,9 @@ class MainHandler(tornado.web.RequestHandler):
         self.finish("main")
 
 class searchHandler(tornado.web.RequestHandler):
+    def set_default_headers(self):
+        self.set_header("Access-Control-Allow-Origin", "*")
+
     def post(self):
         self.set_header("Content-Type", "text/plain")
         print("search handler")
