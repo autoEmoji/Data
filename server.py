@@ -43,6 +43,10 @@ class searchHandler(tornado.web.RequestHandler):
         self.finish(result)
         print('sent result')
 
+    def get(self):
+        self.write("bye")
+        pass
+
 settings = dict(
     static_path=os.path.join(os.path.dirname(__file__), "static")
 )
@@ -52,7 +56,7 @@ def make_app():
     print("make_app")
     return tornado.web.Application([
         (r"/", MainHandler),
-        (r"/search", searchHandler),
+        (r"/search", searchHandler)
     ], **settings)
 
 
