@@ -38,6 +38,7 @@ class searchHandler(tornado.web.RequestHandler):
             self.set_status(404)
             result = json.dumps("empy message")
         print("result:{0}".format(result))
+        self.set_status(200)
         self.finish(result)
         print('sent result')
 
