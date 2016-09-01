@@ -19,8 +19,11 @@ class searchHandler(tornado.web.RequestHandler):
     def post(self):
         print("search handler")
         body = bytes.decode(self.request.body)
+        print("decoded body:\n\t{0}".format(body))
         body = json.loads(body)
+        print("json body:\n\t{0}".format(body))
         msg = body["msg"]
+        print("msg:\n\t{0}".format(msg))
         if msg != "":
             try:
                 test_result = predictor.find_emojis(msg)
