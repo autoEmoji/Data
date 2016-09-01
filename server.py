@@ -34,6 +34,7 @@ class searchHandler(tornado.web.RequestHandler):
                 self.set_status(404)
                 result = "no such user id"
         else:
+            print("issue!!")
             self.set_status(404)
             result = json.dumps("empy message")
         self.finish(result)
